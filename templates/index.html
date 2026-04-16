@@ -1,0 +1,302 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-4 py-lg-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-xxl-11">
+            <section class="hero-card p-4 p-lg-5">
+
+                <div class="hero-top-grid mb-5">
+                    <div class="hero-copy">
+                        <p class="eyebrow mb-3">{{ t.hero_eyebrow }}</p>
+                        <h1 class="hero-title mb-3">{{ t.app_title }}</h1>
+                        <p class="lead app-subtitle mb-4">{{ t.subtitle }}</p>
+
+                        <div class="hero-chip-row">
+                            <span class="hero-chip">Structured support</span>
+                            <span class="hero-chip">Bilingual</span>
+                            <span class="hero-chip">Focus-friendly</span>
+                        </div>
+                    </div>
+
+                    <aside class="controls-panel hero-controls" aria-label="App controls">
+                        <div class="control-card p-3 p-lg-4">
+                            <div class="mb-3">
+                                <label for="language" class="form-label fw-semibold">
+                                    {{ t.language_label }}
+                                </label>
+                                <select id="language" class="form-select">
+                                    <option value="en" {% if current_language == "en" %}selected{% endif %}>English</option>
+                                    <option value="es" {% if current_language == "es" %}selected{% endif %}>Español</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="mode" class="form-label fw-semibold">
+                                    {{ t.mode_label }}
+                                </label>
+                                <select id="mode" class="form-select">
+                                    {% for mode in supported_modes %}
+                                        <option value="{{ mode }}" {% if mode == default_mode %}selected{% endif %}>
+                                            {{ mode.replace('_', ' ').title() }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-main">
+                        <section class="input-panel glass-panel mb-4">
+                            <form id="planner-form" novalidate>
+                                <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-3">
+                                    <label for="task" class="form-label fw-semibold mb-0">
+                                        {{ t.task_label }}
+                                    </label>
+
+                                    <span class="mini-top-chip">structured flow</span>
+                                </div>
+
+                                <textarea
+                                    id="task"
+                                    name="task"
+                                    class="form-control task-textarea"
+                                    rows="6"
+                                    placeholder="{{ t.task_placeholder }}"
+                                    aria-describedby="task-help"
+                                    required
+                                ></textarea>
+
+                                <div id="task-help" class="form-text mt-3">
+                                    {{ t.task_help }}
+                                </div>
+
+                                <div class="action-toolbar d-flex flex-wrap gap-3 mt-4">
+                                    <button type="submit" class="btn btn-dark btn-lg px-4">
+                                        {{ t.submit_button }}
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        id="toggle-contrast"
+                                        class="btn btn-outline-dark accessibility-btn"
+                                        aria-pressed="false"
+                                    >
+                                        {{ t.high_contrast }}
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        id="toggle-large-text"
+                                        class="btn btn-outline-dark accessibility-btn"
+                                        aria-pressed="false"
+                                    >
+                                        {{ t.large_text }}
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        id="toggle-reduce-distractions"
+                                        class="btn btn-outline-dark accessibility-btn"
+                                        aria-pressed="false"
+                                    >
+                                        {{ t.reduce_distractions }}
+                                    </button>
+                                </div>
+                            </form>
+                        </section>
+
+                        <div id="loading" class="loading-state d-none" aria-live="polite" aria-busy="true">
+                            <div class="spinner-border" role="status" aria-hidden="true"></div>
+                            <span class="ms-2">{{ t.loading }}</span>
+                        </div>
+
+                        <section id="results" class="results-panel d-none" aria-live="polite">
+                            <div class="results-header mb-4">
+                                <p class="eyebrow mb-2">{{ t.results_eyebrow }}</p>
+                                <h2 class="h3 mb-2">{{ t.results_title }}</h2>
+                                <p id="summary" class="mb-0 results-summary"></p>
+                            </div>
+
+                            <div class="row g-4 mb-4">
+                                <div class="col-12 col-lg-5">
+                                    <div class="highlight-box h-100">
+                                        <p class="section-label mb-2">{{ t.first_step }}</p>
+                                        <p id="first-step" class="mb-0 fw-semibold"></p>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-lg-7">
+                                    <div class="highlight-box h-100">
+                                        <p class="section-label mb-2">{{ t.focus_tip }}</p>
+                                        <p id="focus-tip" class="mb-0"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="results-grid">
+                                <div class="steps-card h-100">
+                                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-3">
+                                        <div>
+                                            <p class="section-label mb-1">{{ t.steps_eyebrow }}</p>
+                                            <h3 class="h5 mb-0">{{ t.steps_title }}</h3>
+                                        </div>
+
+                                        <div class="steps-badge">
+                                            {{ t.steps_badge }}
+                                        </div>
+                                    </div>
+
+                                    <ol id="steps-list" class="steps-list mb-4"></ol>
+
+                                    <div class="d-flex flex-wrap gap-3">
+                                        <button type="button" id="enter-focus-mode" class="btn btn-dark">
+                                            {{ t.focus_button }}
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div id="focus-panel" class="focus-panel d-none h-100">
+                                    <div class="focus-panel-card h-100">
+                                        <div class="d-flex align-items-center justify-content-between gap-3 mb-3">
+                                            <div>
+                                                <p class="section-label mb-1">{{ t.focus_panel_title }}</p>
+                                                <h3 class="h5 mb-0">{{ t.focus_panel_subtitle }}</h3>
+                                            </div>
+
+                                            <div class="orb-indicator"></div>
+                                        </div>
+
+                                        <div class="focus-step-shell mb-4">
+                                            <p id="focus-step-counter" class="focus-step-counter mb-2"></p>
+                                            <h4 id="focus-step-title" class="h4 mb-2"></h4>
+                                            <p id="focus-step-instruction" class="mb-0"></p>
+                                        </div>
+
+                                        <div class="d-flex flex-wrap gap-2 mb-4">
+                                            <button type="button" id="next-step" class="btn btn-dark">
+                                                {{ t.next_step }}
+                                            </button>
+                                            <button type="button" id="exit-focus-mode" class="btn btn-outline-dark">
+                                                {{ t.exit_focus }}
+                                            </button>
+                                        </div>
+
+                                        <div class="timer-card">
+                                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                                <div>
+                                                    <p class="section-label mb-1">{{ t.timer_title }}</p>
+                                                    <h4 id="timer-phase" class="h6 mb-0">{{ t.timer_work }}</h4>
+                                                </div>
+                                                <div id="timer-status-dot" class="timer-status-dot timer-status-work" aria-hidden="true"></div>
+                                            </div>
+
+                                            <div class="timer-display-shell mb-3">
+                                                <div id="timer-display" class="timer-display">15:00</div>
+                                            </div>
+
+                                            <div class="timer-config-grid mb-3">
+                                                <div>
+                                                    <label for="work-minutes" class="form-label small mb-1">{{ t.timer_work_minutes }}</label>
+                                                    <input
+                                                        type="number"
+                                                        id="work-minutes"
+                                                        class="form-control"
+                                                        min="1"
+                                                        max="120"
+                                                        value="15"
+                                                    >
+                                                </div>
+
+                                                <div>
+                                                    <label for="break-minutes" class="form-label small mb-1">{{ t.timer_break_minutes }}</label>
+                                                    <input
+                                                        type="number"
+                                                        id="break-minutes"
+                                                        class="form-control"
+                                                        min="1"
+                                                        max="60"
+                                                        value="5"
+                                                    >
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                                <button type="button" id="timer-apply" class="btn btn-outline-dark">
+                                                    {{ t.timer_apply }}
+                                                </button>
+                                                <button type="button" id="timer-start" class="btn btn-dark">
+                                                    {{ t.timer_start }}
+                                                </button>
+                                                <button type="button" id="timer-pause" class="btn btn-outline-dark">
+                                                    {{ t.timer_pause }}
+                                                </button>
+                                                <button type="button" id="timer-reset" class="btn btn-outline-dark">
+                                                    {{ t.timer_reset }}
+                                                </button>
+                                            </div>
+
+                                            <p id="timer-feedback" class="timer-feedback mb-0">{{ t.timer_ready }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="history-card mt-4">
+                                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+                                    <div>
+                                        <p class="section-label mb-1">{{ t.history_title }}</p>
+                                        <h3 class="h5 mb-0">{{ t.history_subtitle }}</h3>
+                                    </div>
+                                </div>
+
+                                <div id="history-list" class="history-list">
+                                    <p class="history-empty mb-0">{{ t.history_empty }}</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="dashboard-side">
+                        <section class="support-panel h-100">
+                            <div class="support-card p-4 h-100">
+                                <div class="d-flex align-items-start gap-3 mb-4">
+                                    <div class="icon-pill">✦</div>
+                                    <div>
+                                        <h2 class="h5 mb-2">{{ t.support_title_1 }}</h2>
+                                        <p class="support-copy mb-0">{{ t.support_text_1 }}</p>
+                                    </div>
+                                </div>
+
+                                <hr class="my-4">
+
+                                <div class="d-flex align-items-start gap-3 mb-4">
+                                    <div class="icon-pill">◌</div>
+                                    <div>
+                                        <h2 class="h5 mb-2">{{ t.support_title_2 }}</h2>
+                                        <p class="support-copy mb-0">{{ t.support_text_2 }}</p>
+                                    </div>
+                                </div>
+
+                                <hr class="my-4">
+
+                                <div class="mini-note">
+                                    <p class="mini-note-label mb-2">{{ t.examples_title }}</p>
+                                    <ul class="mini-note-list mb-0">
+                                        <li>{{ t.example_1 }}</li>
+                                        <li>{{ t.example_2 }}</li>
+                                        <li>{{ t.example_3 }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}

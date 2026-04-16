@@ -1,0 +1,422 @@
+[
+  {
+    "timestamp": "2026-04-13T13:59:16.610176Z",
+    "task": "I need to clean my room and I do not know where to start.",
+    "language": "en",
+    "mode": "gentle",
+    "used_fallback": true,
+    "plan": {
+      "summary": "This task looks big. Let’s start with a simpler version.",
+      "first_step": "Open what you need and choose only one part to begin with.",
+      "steps": [
+        {
+          "title": "Choose one small part",
+          "instruction": "Do not try to do everything at once. Pick one small part of the task.",
+          "minutes": 3
+        },
+        {
+          "title": "Prepare materials",
+          "instruction": "Open the notes, documents, or tools you need.",
+          "minutes": 5
+        },
+        {
+          "title": "First short work block",
+          "instruction": "Work for only 15 minutes on one concrete part.",
+          "minutes": 15
+        },
+        {
+          "title": "Take a short break",
+          "instruction": "Pause, drink water, and come back after the break.",
+          "minutes": 5
+        }
+      ],
+      "focus_tip": "Do only the current step.",
+      "break_after_minutes": 15
+    }
+  },
+  {
+    "timestamp": "2026-04-16T11:19:16.338805Z",
+    "task": "I need to study for an exam and i feel blocked",
+    "language": "en",
+    "mode": "gentle",
+    "used_fallback": false,
+    "plan": {
+      "summary": "You do not need to do everything at once. This looks like a study task, so the goal is to make it specific and easy to begin.",
+      "first_step": "Open your notes and choose only one topic to work on first.",
+      "steps": [
+        {
+          "title": "Choose one topic",
+          "instruction": "Pick only one chapter, question set, or topic. Ignore the rest for now.",
+          "minutes": 3
+        },
+        {
+          "title": "Prepare materials",
+          "instruction": "Open your notes, slides, book, or document and keep one blank page nearby.",
+          "minutes": 5
+        },
+        {
+          "title": "Do one short study block",
+          "instruction": "Study only that one topic for a short block. Stop when the timer ends.",
+          "minutes": 15
+        },
+        {
+          "title": "Mark what is still unclear",
+          "instruction": "Write down the parts you still do not understand so the next step is obvious.",
+          "minutes": 5
+        }
+      ],
+      "focus_tip": "Stay with only the current step.",
+      "break_after_minutes": 15
+    }
+  },
+  {
+    "timestamp": "2026-04-16T11:19:46.306774Z",
+    "task": "I need to clean my room and I do not know where to start",
+    "language": "en",
+    "mode": "gentle",
+    "used_fallback": false,
+    "plan": {
+      "summary": "You do not need to do everything at once. This looks like a cleaning or organizing task, so we will reduce it to one visible area.",
+      "first_step": "Choose one small surface or one corner only.",
+      "steps": [
+        {
+          "title": "Choose one zone",
+          "instruction": "Pick one desk, chair, bed section, or one corner of the room.",
+          "minutes": 3
+        },
+        {
+          "title": "Remove obvious trash",
+          "instruction": "Throw away trash and move the most obvious misplaced items first.",
+          "minutes": 5
+        },
+        {
+          "title": "Do one short reset",
+          "instruction": "Spend one short block putting things back where they belong in that area only.",
+          "minutes": 15
+        },
+        {
+          "title": "Pause before expanding",
+          "instruction": "Stop and check whether you want to continue or stay with this single finished area.",
+          "minutes": 3
+        }
+      ],
+      "focus_tip": "Stay with only the current step.",
+      "break_after_minutes": 15
+    }
+  },
+  {
+    "timestamp": "2026-04-16T11:22:14.910738Z",
+    "task": "Tengo que estudiar para un examen y me siento bloqueada",
+    "language": "es",
+    "mode": "gentle",
+    "used_fallback": false,
+    "plan": {
+      "summary": "No hace falta hacer todo de una vez. Parece una tarea de estudio, así que la idea es volverla específica y fácil de empezar.",
+      "first_step": "Abrí tus apuntes y elegí un solo tema para empezar.",
+      "steps": [
+        {
+          "title": "Elegir un tema",
+          "instruction": "Elegí un solo capítulo, unidad, pregunta o tema. Ignorá el resto por ahora.",
+          "minutes": 3
+        },
+        {
+          "title": "Preparar materiales",
+          "instruction": "Abrí apuntes, diapositivas, libro o documento y dejá una hoja cerca.",
+          "minutes": 5
+        },
+        {
+          "title": "Hacer un bloque corto de estudio",
+          "instruction": "Estudiá solo ese tema durante un bloque corto. Frená cuando termine el tiempo.",
+          "minutes": 15
+        },
+        {
+          "title": "Marcar lo que falta entender",
+          "instruction": "Anotá qué partes todavía no entendés para que el próximo paso sea claro.",
+          "minutes": 5
+        }
+      ],
+      "focus_tip": "Quedate solo con el paso actual.",
+      "break_after_minutes": 15
+    }
+  },
+  {
+    "timestamp": "2026-04-16T11:22:21.570655Z",
+    "task": "Tengo que estudiar para un examen y me siento bloqueada",
+    "language": "es",
+    "mode": "direct",
+    "used_fallback": false,
+    "plan": {
+      "summary": "Mantené esto simple y práctico. Parece una tarea de estudio, así que la idea es volverla específica y fácil de empezar.",
+      "first_step": "Abrí tus apuntes y elegí un solo tema para empezar.",
+      "steps": [
+        {
+          "title": "Elegir un tema",
+          "instruction": "Elegí un solo capítulo, unidad, pregunta o tema. Ignorá el resto por ahora.",
+          "minutes": 2
+        },
+        {
+          "title": "Preparar materiales",
+          "instruction": "Abrí apuntes, diapositivas, libro o documento y dejá una hoja cerca.",
+          "minutes": 5
+        },
+        {
+          "title": "Hacer un bloque corto de estudio",
+          "instruction": "Estudiá solo ese tema durante un bloque corto. Frená cuando termine el tiempo.",
+          "minutes": 15
+        },
+        {
+          "title": "Marcar lo que falta entender",
+          "instruction": "Anotá qué partes todavía no entendés para que el próximo paso sea claro.",
+          "minutes": 5
+        }
+      ],
+      "focus_tip": "Hacé el paso actual e ignorá el resto.",
+      "break_after_minutes": 15
+    }
+  },
+  {
+    "timestamp": "2026-04-16T11:22:30.234960Z",
+    "task": "Tengo que estudiar para un examen y me siento bloqueada",
+    "language": "es",
+    "mode": "study",
+    "used_fallback": false,
+    "plan": {
+      "summary": "Primero usá estructura y claridad. Parece una tarea de estudio, así que la idea es volverla específica y fácil de empezar.",
+      "first_step": "Abrí tus apuntes y elegí un solo tema para empezar.",
+      "steps": [
+        {
+          "title": "Elegir un tema",
+          "instruction": "Elegí un solo capítulo, unidad, pregunta o tema. Ignorá el resto por ahora.",
+          "minutes": 3
+        },
+        {
+          "title": "Preparar materiales",
+          "instruction": "Abrí apuntes, diapositivas, libro o documento y dejá una hoja cerca.",
+          "minutes": 5
+        },
+        {
+          "title": "Hacer un bloque corto de estudio",
+          "instruction": "Estudiá solo ese tema durante un bloque corto. Frená cuando termine el tiempo.",
+          "minutes": 20
+        },
+        {
+          "title": "Marcar lo que falta entender",
+          "instruction": "Anotá qué partes todavía no entendés para que el próximo paso sea claro.",
+          "minutes": 5
+        }
+      ],
+      "focus_tip": "Terminá un paso de estudio antes de pasar al siguiente.",
+      "break_after_minutes": 20
+    }
+  },
+  {
+    "timestamp": "2026-04-16T11:22:39.135807Z",
+    "task": "Tengo que estudiar para un examen y me siento bloqueada",
+    "language": "es",
+    "mode": "low_energy",
+    "used_fallback": false,
+    "plan": {
+      "summary": "Usá la versión más pequeña posible de la tarea. Parece una tarea de estudio, así que la idea es volverla específica y fácil de empezar.",
+      "first_step": "Abrí tus apuntes y elegí un solo tema para empezar.",
+      "steps": [
+        {
+          "title": "Elegir un tema",
+          "instruction": "Elegí un solo capítulo, unidad, pregunta o tema. Ignorá el resto por ahora.",
+          "minutes": 2
+        },
+        {
+          "title": "Preparar materiales",
+          "instruction": "Abrí apuntes, diapositivas, libro o documento y dejá una hoja cerca.",
+          "minutes": 5
+        },
+        {
+          "title": "Hacer un bloque corto de estudio",
+          "instruction": "Estudiá solo ese tema durante un bloque corto. Frená cuando termine el tiempo.",
+          "minutes": 10
+        },
+        {
+          "title": "Marcar lo que falta entender",
+          "instruction": "Anotá qué partes todavía no entendés para que el próximo paso sea claro.",
+          "minutes": 5
+        }
+      ],
+      "focus_tip": "Mantené el paso chico y fácil de iniciar.",
+      "break_after_minutes": 10
+    }
+  },
+  {
+    "timestamp": "2026-04-16T11:22:53.348537Z",
+    "task": "Tengo que ordenar mi cuarto y no sé por dónde empezar",
+    "language": "es",
+    "mode": "low_energy",
+    "used_fallback": false,
+    "plan": {
+      "summary": "Usá la versión más pequeña posible de la tarea. Parece una tarea de orden o limpieza, así que la vamos a reducir a una zona visible.",
+      "first_step": "Elegí una sola superficie o un rincón.",
+      "steps": [
+        {
+          "title": "Elegir una zona",
+          "instruction": "Elegí solo un escritorio, silla, parte de la cama o un rincón del cuarto.",
+          "minutes": 2
+        },
+        {
+          "title": "Sacar lo obvio",
+          "instruction": "Retirá basura y objetos claramente fuera de lugar.",
+          "minutes": 5
+        },
+        {
+          "title": "Hacer un bloque corto de orden",
+          "instruction": "Ordená solo esa zona durante un bloque corto.",
+          "minutes": 10
+        },
+        {
+          "title": "Pausar antes de seguir",
+          "instruction": "Frená y revisá si querés seguir o quedarte con esa zona ya terminada.",
+          "minutes": 3
+        }
+      ],
+      "focus_tip": "Mantené el paso chico y fácil de iniciar.",
+      "break_after_minutes": 10
+    }
+  },
+  {
+    "timestamp": "2026-04-16T11:23:31.244935Z",
+    "task": "Tengo que ordenar mi cuarto y no sé por dónde empezar",
+    "language": "es",
+    "mode": "gentle",
+    "used_fallback": false,
+    "plan": {
+      "summary": "No hace falta hacer todo de una vez. Parece una tarea de orden o limpieza, así que la vamos a reducir a una zona visible.",
+      "first_step": "Elegí una sola superficie o un rincón.",
+      "steps": [
+        {
+          "title": "Elegir una zona",
+          "instruction": "Elegí solo un escritorio, silla, parte de la cama o un rincón del cuarto.",
+          "minutes": 3
+        },
+        {
+          "title": "Sacar lo obvio",
+          "instruction": "Retirá basura y objetos claramente fuera de lugar.",
+          "minutes": 5
+        },
+        {
+          "title": "Hacer un bloque corto de orden",
+          "instruction": "Ordená solo esa zona durante un bloque corto.",
+          "minutes": 15
+        },
+        {
+          "title": "Pausar antes de seguir",
+          "instruction": "Frená y revisá si querés seguir o quedarte con esa zona ya terminada.",
+          "minutes": 3
+        }
+      ],
+      "focus_tip": "Quedate solo con el paso actual.",
+      "break_after_minutes": 15
+    }
+  },
+  {
+    "timestamp": "2026-04-16T11:35:20.715794Z",
+    "task": "Tengo que ordenar mi cuarto y no sé por dónde empezar",
+    "language": "es",
+    "mode": "low_energy",
+    "used_fallback": false,
+    "plan": {
+      "summary": "Usá la versión más pequeña posible de la tarea. Parece una tarea de orden o limpieza, así que la idea es hacerla muy chica.",
+      "first_step": "Elegí una zona mínima.",
+      "steps": [
+        {
+          "title": "Elegí una zona mínima",
+          "instruction": "Elegí un estante, una silla o una superficie chica.",
+          "minutes": 2
+        },
+        {
+          "title": "Sacá algunos objetos visibles",
+          "instruction": "Retirá solo lo más evidente.",
+          "minutes": 3
+        },
+        {
+          "title": "Ordená un momento corto",
+          "instruction": "Poné unas pocas cosas en su lugar.",
+          "minutes": 8
+        },
+        {
+          "title": "Frená sin culpa",
+          "instruction": "Pausá acá. Un pequeño orden también cuenta.",
+          "minutes": 2
+        }
+      ],
+      "focus_tip": "Mantené el paso chico y fácil de iniciar.",
+      "break_after_minutes": 8
+    }
+  },
+  {
+    "timestamp": "2026-04-16T11:35:26.865377Z",
+    "task": "Tengo que ordenar mi cuarto y no sé por dónde empezar",
+    "language": "es",
+    "mode": "gentle",
+    "used_fallback": false,
+    "plan": {
+      "summary": "No hace falta hacer todo de una vez. Parece una tarea de orden o limpieza, así que la vamos a hacer más manejable.",
+      "first_step": "Elegí una superficie chica o un rincón solamente.",
+      "steps": [
+        {
+          "title": "Elegir una zona",
+          "instruction": "Elegí un escritorio, una silla, una parte de la cama o un rincón del cuarto.",
+          "minutes": 3
+        },
+        {
+          "title": "Sacar el desorden visible",
+          "instruction": "Retirá primero el desorden más evidente o los objetos fuera de lugar.",
+          "minutes": 5
+        },
+        {
+          "title": "Hacer un bloque corto de orden",
+          "instruction": "Ordená solo esa zona durante un bloque corto.",
+          "minutes": 15
+        },
+        {
+          "title": "Pausar antes de expandir",
+          "instruction": "Frená y revisá si querés seguir o quedarte con esa sola zona terminada.",
+          "minutes": 5
+        }
+      ],
+      "focus_tip": "Quedate solo con el paso actual.",
+      "break_after_minutes": 15
+    }
+  },
+  {
+    "timestamp": "2026-04-16T11:35:36.003533Z",
+    "task": "Tengo que ordenar mi cuarto y no sé por dónde empezar",
+    "language": "es",
+    "mode": "direct",
+    "used_fallback": false,
+    "plan": {
+      "summary": "Mantené esto simple y práctico. Esto es orden o limpieza. Reducí la zona y empezá.",
+      "first_step": "Elegí una sola zona.",
+      "steps": [
+        {
+          "title": "Elegí una zona",
+          "instruction": "Elegí una superficie, un rincón o una parte del cuarto.",
+          "minutes": 2
+        },
+        {
+          "title": "Sacá el desorden",
+          "instruction": "Retirá primero lo más visible.",
+          "minutes": 3
+        },
+        {
+          "title": "Ordená la zona",
+          "instruction": "Poné las cosas en su lugar solo en esa zona.",
+          "minutes": 12
+        },
+        {
+          "title": "Frená y revisá",
+          "instruction": "Decidí si seguís o terminás ahí.",
+          "minutes": 2
+        }
+      ],
+      "focus_tip": "Hacé el paso actual e ignorá el resto.",
+      "break_after_minutes": 12
+    }
+  }
+]

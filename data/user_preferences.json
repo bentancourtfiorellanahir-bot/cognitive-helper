@@ -1,0 +1,9 @@
+{
+  "default_language": "en",
+  "default_mode": "gentle",
+  "high_contrast": false,
+  "large_text": false,
+  "reduce_distractions": false,
+  "work_minutes": 15,
+  "break_minutes": 5
+}

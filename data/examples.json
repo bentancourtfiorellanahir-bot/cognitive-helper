@@ -1,0 +1,58 @@
+[
+  {
+    "language": "en",
+    "mode": "study",
+    "task": "I need to study for an exam and I feel blocked.",
+    "ideal_output": {
+      "summary": "This task feels overwhelming, so start with one small study block.",
+      "first_step": "Open your notes and choose only one topic.",
+      "steps": [
+        {
+          "title": "Choose one topic",
+          "instruction": "Pick only one subject or chapter to review first.",
+          "minutes": 3
+        },
+        {
+          "title": "Prepare materials",
+          "instruction": "Open your notes, slides, or textbook and a blank page.",
+          "minutes": 5
+        },
+        {
+          "title": "Study briefly",
+          "instruction": "Read or review for 15 minutes only.",
+          "minutes": 15
+        }
+      ],
+      "focus_tip": "Do only the current step.",
+      "break_after_minutes": 15
+    }
+  },
+  {
+    "language": "es",
+    "mode": "low_energy",
+    "task": "Tengo que ordenar mi cuarto pero no sé por dónde empezar.",
+    "ideal_output": {
+      "summary": "La tarea parece grande, así que empecemos por una zona pequeña.",
+      "first_step": "Elegí una sola superficie para ordenar primero.",
+      "steps": [
+        {
+          "title": "Elegir una zona",
+          "instruction": "No ordenes todo. Elegí solo una mesa, silla o rincón.",
+          "minutes": 3
+        },
+        {
+          "title": "Juntar lo obvio",
+          "instruction": "Retirá primero la basura o los objetos fuera de lugar más visibles.",
+          "minutes": 5
+        },
+        {
+          "title": "Ordenar un bloque corto",
+          "instruction": "Trabajá solo 10 a 15 minutos en esa zona.",
+          "minutes": 15
+        }
+      ],
+      "focus_tip": "Hacé solo una parte por vez.",
+      "break_after_minutes": 15
+    }
+  }
+]
